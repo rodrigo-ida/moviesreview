@@ -6,9 +6,6 @@ function App() {
   return (
     <StyledApp >
       <Root />
-      {/* <div>
-        'oi'
-      </div> */}
     </StyledApp>
   )
 }

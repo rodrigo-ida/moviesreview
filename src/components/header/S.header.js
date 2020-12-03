@@ -7,6 +7,7 @@ const StyledHeader = (
     display:flex;
     justify-content: space-between;
     padding: 10px ;
+    position: relative;
 
     `
 )

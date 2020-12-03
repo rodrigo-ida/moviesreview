@@ -9,7 +9,7 @@ const HeaderNavbar = props => {
 
     return(
         <StyledHeaderNavbar headerHeight={props.headerHeight} clicked={props.clicked}>
-                <StyledNavbarList />
+                <StyledNavbarList clicked={props.clicked}/>
         </StyledHeaderNavbar>
     )
 }
