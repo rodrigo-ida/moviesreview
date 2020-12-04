@@ -1,13 +1,16 @@
-import React from 'react'
-import StyledApp from './S.App';
-import Root from './containers/root/Root'
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import StyledApp from "./S.App";
+import Root from "./containers/root/Root";
 
 function App() {
-  return (
-    <StyledApp >
-      <Root />
-    </StyledApp>
-  )
+    return (
+        <BrowserRouter>
+            <StyledApp>
+                <Root />
+            </StyledApp>
+        </BrowserRouter>
+    );
 }
 
 export default App;

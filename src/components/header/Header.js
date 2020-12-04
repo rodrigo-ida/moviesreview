@@ -18,9 +18,9 @@ const Header = props => {
     return (
         <StyledHeader headerHeight={headerHeight} >
             <Logo />
-            <BurgerBtn clicked={clicked} setclicked={setclicked}>
-                <HeaderNavbar headerHeight={headerHeight} clicked={clicked}/>
-            </BurgerBtn>
+            <BurgerBtn clicked={clicked} setclicked={setclicked} />
+            <HeaderNavbar headerHeight={headerHeight} clicked={clicked}/>
+
         </StyledHeader>
     )
 }

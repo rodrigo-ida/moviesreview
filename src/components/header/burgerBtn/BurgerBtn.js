@@ -21,7 +21,6 @@ const BurgerBtn = props => {
             <StyledBurgerBtn clicked={props.clicked} position='top'/>
             <StyledBurgerBtn clicked={props.clicked} position='middle'/>
             <StyledBurgerBtn clicked={props.clicked} position='bottom'/>
-            {props.children}
     
     </StyledBurgerBtnContainer>
 )}

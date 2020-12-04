@@ -27,7 +27,7 @@ to{ transform: rotate(0deg); top: 0px}
 `
 
 const StyledBurgerBtn = styled.div`
-    background-color: ${props => props.cor || 'black'} ;
+background-color: whitesmoke;
     width: 25px;
     height: 2px;
     position: relative;
