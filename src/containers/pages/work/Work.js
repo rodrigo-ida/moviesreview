@@ -1,19 +1,22 @@
-import React from 'react'
-import StyledWork from './S.work'
+import React from "react";
+import StyledWork from "./S.work";
+import {Route} from 'react-router-dom'
 
-import StyledMovieList from './moviesList/MovieList'
-
-
-
+import MovieList from '../../../components/workPage/movieList/MovieList'
 
 
-const Work = props => {
 
-    return(
+const Work = (props) => {
+    return (
         <StyledWork>
-            <StyledMovieList />
-        </StyledWork>
-    )
-}
+            <Route path='/work' >
+                <MovieList setshowHeader={props.setshowHeader}/>
+            </Route>
+            <Route path='/work/midia-digital'>
 
-export default Work
+            </Route>
+        </StyledWork>
+    );
+};
+
+export default Work;

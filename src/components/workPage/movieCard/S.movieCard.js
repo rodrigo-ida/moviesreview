@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components'
+import React from 'react'
+
+const showFullscreenImg = (props) => {
+    
+    console.log(props.position);
+    
+return keyframes`
+
+from{ height: 200px; }
+to{ height: 100vh ; top: 0px}
+`
+}
+
 
 const StyledMovieCardContainer = styled.div`
     background-image: url(${(props) => props.img});
@@ -8,6 +21,9 @@ const StyledMovieCardContainer = styled.div`
     background-size: cover;
     padding: 1px 0;
     font-family: 'Crimson Text', serif;
+    position: ${props => props.clicked ? 'fixed' : 'relative'};
+    z-index: ${props => props.clicked ? 1 : 0};
+    animation: ${props => props.clicked ? showFullscreenImg(props) : ''} 1s forwards;
 
 `;
 
@@ -47,24 +63,11 @@ justify-content: center;
 align-items: center;
 padding: 0 0 0 30px;
 font-size: 20px;
-
-
 `
 
-const StyledMovieCard = (props) => {
-    return (
-        <StyledMovieCardContainer img={props.img}>
-            <CardTextContainer>
-                <CardText>
-                    <Title>{props.title}</Title>
-                    <Subtitle>{props.subtitle}</Subtitle>
-                </CardText>
-                <ArrowContainer>
-                    <i class="fas fa-long-arrow-alt-right"></i>
-                </ArrowContainer>
-            </CardTextContainer>
-        </StyledMovieCardContainer>
-    );
-};
-
-export default StyledMovieCard;
+export {StyledMovieCardContainer,
+    CardTextContainer,
+    CardText,
+    Title,
+    Subtitle,
+    ArrowContainer}
