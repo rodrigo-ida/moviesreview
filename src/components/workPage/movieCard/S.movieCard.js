@@ -2,9 +2,7 @@ import styled, { keyframes } from 'styled-components'
 import React from 'react'
 
 const showFullscreenImg = (props) => {
-    
-    console.log(props.position);
-    
+        
 return keyframes`
 
 from{ height: 200px; }
@@ -13,6 +11,19 @@ to{ height: 100vh ; top: 0px}
 }
 
 
+// const StyledMovieCardContainer = styled.div`
+//     background-image: url(${(props) => props.img});
+//     width: 100vw;
+//     height: 200px;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     padding: 1px 0;
+//     font-family: 'Crimson Text', serif;
+//     position: ${props => props.clicked ? 'fixed' : 'relative'};
+//     z-index: ${props => props.clicked ? 1 : 0};
+//     animation: ${props => props.clicked ? showFullscreenImg(props) : ''} 1s forwards;
+
+// `;
 const StyledMovieCardContainer = styled.div`
     background-image: url(${(props) => props.img});
     width: 100vw;
@@ -21,9 +32,6 @@ const StyledMovieCardContainer = styled.div`
     background-size: cover;
     padding: 1px 0;
     font-family: 'Crimson Text', serif;
-    position: ${props => props.clicked ? 'fixed' : 'relative'};
-    z-index: ${props => props.clicked ? 1 : 0};
-    animation: ${props => props.clicked ? showFullscreenImg(props) : ''} 1s forwards;
 
 `;
 
