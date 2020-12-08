@@ -1,16 +1,21 @@
 .view-transition-enter-active{
+    position: absolute;
 
 }
 .view-transition-enter-done{
+    position: absolute;
 
 }
 .view-transition-exit{
+    position: absolute;
    
 }
 .view-transition-exit-active{
+    position: absolute;
   
 }
 .view-transition-exit-done{
+    position: absolute;
   
 
 }

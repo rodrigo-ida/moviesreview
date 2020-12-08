@@ -6,3 +6,4 @@
 [1207/153929.141:ERROR:exception_snapshot_win.cc(99)] thread ID 6624 not found in process
 [1207/153929.141:ERROR:exception_snapshot_win.cc(99)] thread ID 14420 not found in process
 [1207/162322.215:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1207/225719.339:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import StyledHeader from './S.header'
+import {Link} from 'react-router-dom'
 
 import BurgerBtn from './burgerBtn/BurgerBtn'
 import HeaderNavbar from './header-navbar/HeaderNavbar'
@@ -17,7 +18,9 @@ const Header = props => {
 
     return (
         <StyledHeader headerHeight={headerHeight} showHeader={props.showHeader}>
+            <Link to='/work'>
             <Logo />
+            </Link>
             <BurgerBtn clicked={clicked} setclicked={setclicked} />
             <HeaderNavbar headerHeight={headerHeight} clicked={clicked}/>
 
