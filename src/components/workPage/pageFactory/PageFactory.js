@@ -112,9 +112,11 @@ const LastDivParagraph = styled.p`
 
 const PageFactory = (props) => {
 
+    const {coisa} = props
+
     useEffect(() => {
-        props.coisa.current.scrollIntoView({ behavior: 'smooth' })
-      }, [])
+        coisa.current.scrollIntoView({ behavior: 'smooth' })
+      }, [coisa])
 
 
     return (
