@@ -17,7 +17,7 @@ const Header = props => {
 
 
     return (
-        <StyledHeader headerHeight={headerHeight} showHeader={props.showHeader}>
+        <StyledHeader headerHeight={headerHeight} showHeader={props.showHeader} >
             <Link to='/work'>
             <Logo />
             </Link>

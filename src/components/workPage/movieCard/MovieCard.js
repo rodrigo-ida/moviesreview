@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
     StyledMovieCardContainer,
     CardTextContainer,
@@ -8,17 +7,20 @@ import {
     ArrowContainer,
 } from "./S.movieCard";
 
+
 const StyledMovieCard = (props) => {
     // const [clicked, setclicked] = useState(false);
 
-    // const clickHandler = () => {
+    const clickHandler = () => {
     // setclicked((prevState) => !prevState);
     // props.setshowHeader(prevState => !prevState);
-    // };
+    props.setcardClicked(props.movieCardIndex)
+
+    };
     return (
         <StyledMovieCardContainer
             img={props.img}
-            // onClick={clickHandler}
+            onClick={clickHandler}
             // clicked={clicked}
         >
             <CardTextContainer>

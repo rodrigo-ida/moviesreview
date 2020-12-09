@@ -6,8 +6,8 @@ import StyledMovieCard from "../movieCard/MovieCard";
 import movieData from "../../../assets/moviesData/movieData";
 
 const MovieList = (props) => {
-    const movieListHelper = movieData.map((e) => (
-        <li>
+    const movieListHelper = movieData.map((e, index) => (
+        <li key={e.title+index}>
             <Link
                 to={(props) => ({
                     ...props,
@@ -19,6 +19,8 @@ const MovieList = (props) => {
                     img={e.img}
                     title={e.title}
                     subtitle={e.subtitle}
+                    setcardClicked={props.setcardClicked}
+                    movieCardIndex={index}
                 />
             </Link>
         </li>

@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled, { keyframes } from "styled-components";
-import MovieCard from "../movieCard/MovieCard";
 
 const Container = styled.div`
     height: auto;
@@ -9,8 +8,9 @@ const Container = styled.div`
 
 const BackgroundImgFullScreen = keyframes`
 
-from{ height: 200px}
-to{ height: 100vh}
+0%{ height: 200px}
+
+100%{ height: 100vh}
 
 `;
 
@@ -24,6 +24,7 @@ const BackgroundImgContainer = styled.div`
     position: relative;
     top: 0px;
     animation: ${BackgroundImgFullScreen} 1s 50ms forwards;
+
 `;
 
 const VideoBtn = styled.button`
@@ -107,11 +108,19 @@ const LastDivParagraph = styled.p`
     line-height: 20px;
 `;
 
+
+
 const PageFactory = (props) => {
+
+    useEffect(() => {
+        props.coisa.current.scrollIntoView({ behavior: 'smooth' })
+      }, [])
+
+
     return (
-        <Container>
+        <Container >
             <BackgroundImgContainer img={props.img} />
-            <VideoBtn>
+            <VideoBtn >
                 ASSISTA O VIDEO
                 <i
                     style={arrowStyle}
@@ -128,7 +137,6 @@ const PageFactory = (props) => {
             <LastDiv>
                 <LastDivParagraph>{props.lastParagraph}</LastDivParagraph>
             </LastDiv>
-            {/* <MovieCard /> */}
         </Container>
     );
 };
