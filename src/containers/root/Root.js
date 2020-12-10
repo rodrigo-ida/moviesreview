@@ -4,6 +4,8 @@ import StyledRoot from "./S.root";
 import Work from "../pages/work/Work";
 
 import Header from "../../components/header/Header";
+import HeaderNavbar from '../../components/header/header-navbar/HeaderNavbar'
+
 
 const Root = () => {
     const [showHeader, setshowHeader] = useState(true);
@@ -14,10 +16,15 @@ const Root = () => {
 
     console.log(coisa);}
     )
+    const headerHeight = 60
+    let [clicked, setclicked] = useState(false)
+
+
 
     return (
         <StyledRoot ref={coisa}>
-            <Header showHeader={showHeader} /> {/* zindex 100 */}
+            <Header clicked={clicked} setclicked={setclicked} showHeader={showHeader} /> {/* zindex 100 */}
+            <HeaderNavbar headerHeight={headerHeight} clicked={clicked}/>
             <main>
                 <Route path="/work">
                     <Work setshowHeader={setshowHeader} coisa={coisa}/>

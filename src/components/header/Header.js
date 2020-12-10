@@ -3,7 +3,6 @@ import StyledHeader from './S.header'
 import {Link} from 'react-router-dom'
 
 import BurgerBtn from './burgerBtn/BurgerBtn'
-import HeaderNavbar from './header-navbar/HeaderNavbar'
 
 import Logo from './Logo'
 
@@ -11,18 +10,17 @@ import Logo from './Logo'
 
 const Header = props => {
 
-    const headerHeight = 60
 
-    let [clicked, setclicked] = useState(false)
-
+    const LogoClickHandler = () =>{
+        props.setclicked(false)
+    }
 
     return (
-        <StyledHeader headerHeight={headerHeight} showHeader={props.showHeader} >
+        <StyledHeader headerHeight={props.headerHeight} showHeader={props.showHeader} >
             <Link to='/work'>
-            <Logo />
+            <Logo onClick={LogoClickHandler}/>
             </Link>
-            <BurgerBtn clicked={clicked} setclicked={setclicked} />
-            <HeaderNavbar headerHeight={headerHeight} clicked={clicked}/>
+            <BurgerBtn clicked={props.clicked} setclicked={props.setclicked} />
 
         </StyledHeader>
     )
