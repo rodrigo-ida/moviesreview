@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import StyledHeader from "./S.header";
 import { Link } from "react-router-dom";
 
