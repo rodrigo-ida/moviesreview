@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
@@ -23,9 +23,15 @@ const BackgroundImgContainer = styled.div`
     padding: 1px 0;
     position: relative;
     top: 0px;
-    animation: ${BackgroundImgFullScreen} 1s 50ms forwards;
 
+    animation: ${BackgroundImgFullScreen} 1s 50ms forwards;
 `;
+
+const btnAnimation = keyframes`
+0%{ left: -238px}
+50%{left: 90px}
+100%{left: 0px;}
+`
 
 const VideoBtn = styled.button`
     height: 55px;
@@ -35,10 +41,15 @@ const VideoBtn = styled.button`
     font-size: 18px;
     position: absolute;
     top: 50vh;
+    left: -250px;
     border: none;
     padding-left: 20px;
     padding: 10px 0 10px 20px;
+    animation: ${btnAnimation} 1s 1.5s ease-in-out forwards;
 `;
+
+
+
 const arrowStyle = {
     color: "gold",
     paddingLeft: "20px",
@@ -108,21 +119,17 @@ const LastDivParagraph = styled.p`
     line-height: 20px;
 `;
 
-
-
 const PageFactory = (props) => {
-
-    const {coisa} = props
+    const { coisa } = props;
 
     useEffect(() => {
-        coisa.current.scrollIntoView({ behavior: 'smooth' })
-      }, [coisa])
-
+        coisa.current.scrollIntoView({ behavior: "smooth" });
+    }, [coisa]);
 
     return (
-        <Container >
+        <Container>
             <BackgroundImgContainer img={props.img} />
-            <VideoBtn >
+            <VideoBtn>
                 ASSISTA O VIDEO
                 <i
                     style={arrowStyle}
