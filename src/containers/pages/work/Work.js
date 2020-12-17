@@ -10,12 +10,11 @@ import AllMovies from '../../../assets/img/workPage/digital-media-page/Banners_S
 
 import movieData from '../../../assets/moviesData/movieData'
 
-import "./Work.css";
+// import "./Work.css";
 
 const Work = (props) => {
 
     const [cardClicked, setcardClicked] = useState(0)
-
 
     return (
         <StyledWork>
@@ -25,7 +24,7 @@ const Work = (props) => {
                         <TransitionGroup>
                             <CSSTransition
                                 key={location.key}
-                                timeout={50}
+                                timeout={1000}
                                 classNames={{
                                     enterActive: "view-transition-enter-active",
                                     enterDone: "view-transition-enter-done",
@@ -49,7 +48,6 @@ const Work = (props) => {
                                             description={movieData[cardClicked].mediaDescription}
                                             AllMovies={AllMovies}
                                             lastParagraph={movieData[cardClicked].lastParagraph}
-                                            coisa={props.coisa}
                                         />
                                     </Route>
                                 </Switch>

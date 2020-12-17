@@ -18,7 +18,7 @@ color: gray;
 font-size: 25px;
 padding: 30px 0;
 margin-left: 100%;
-animation: ${props => props.clicked ? showItem : ''} ${props => props.animationStart}s .3s forwards;
+animation: ${props => props.clicked ? showItem : ''} ${props => props.animationStart}s .7s forwards;
 
 `
 

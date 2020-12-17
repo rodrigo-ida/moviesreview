@@ -7,7 +7,6 @@ import './HeaderNavbar.css'
 
 const HeaderNavbar = (props) => {
 
-    console.log(props.clicked);
     return (
         <CSSTransition
         mountOnEnter

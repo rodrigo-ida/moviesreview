@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect} from "react";
+import React, { useState} from "react";
 import { Redirect, Route } from "react-router-dom";
 import StyledRoot from "./S.root";
 import Work from "../pages/work/Work";
@@ -10,24 +10,19 @@ import HeaderNavbar from '../../components/header/header-navbar/HeaderNavbar'
 const Root = () => {
     const [showHeader, setshowHeader] = useState(true);
 
-    const coisa = useRef(null)
 
-    useEffect(()=> {
-
-    console.log(coisa);}
-    )
-    const headerHeight = 60
+    const headerHeight = 70
     let [clicked, setclicked] = useState(false)
 
 
 
     return (
-        <StyledRoot ref={coisa}>
-            <Header clicked={clicked} setclicked={setclicked} showHeader={showHeader} /> {/* zindex 100 */}
+        <StyledRoot>
+            <Header clicked={clicked} setclicked={setclicked} showHeader={showHeader} headerHeight={headerHeight}/> {/* zindex 100 */}
             <HeaderNavbar headerHeight={headerHeight} clicked={clicked}/>
             <main>
                 <Route path="/work">
-                    <Work setshowHeader={setshowHeader} coisa={coisa}/>
+                    <Work setshowHeader={setshowHeader} />
                 </Route>
                 <Redirect from="/" to="/work" />
             </main>
