@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
+import {  motion } from "framer-motion";
+
+
+
+
 const Container = styled.div`
   height: auto;
   width: 100vw;
+  position: relative;
+  z-index: 5555;
 `;
 
 const BackgroundImgFullScreen = keyframes`
@@ -22,8 +29,8 @@ const BackgroundImgContainer = styled.div`
   background-size: cover;
   background-position: center;
   padding: 1px 0;
-  position: relative;
-  top: 0px;
+  /* position: relative;
+  top: 0px; */
 
   animation: ${BackgroundImgFullScreen} 1s 50ms forwards;
 `;
@@ -41,12 +48,13 @@ const VideoBtn = styled.button`
   color: gray;
   font-size: 18px;
   position: absolute;
+  z-index: 1;
   top: 50vh;
   left: -250px;
   border: none;
   padding-left: 20px;
   padding: 10px 0 10px 20px;
-  animation: ${btnAnimation} 0.4s 1.5s ease-out forwards;
+  animation: ${btnAnimation} 0.4s .5s ease-out forwards;
 `;
 
 const arrowStyle = {
@@ -123,7 +131,15 @@ const PageFactory = (props) => {
     window.scrollTo(0, 0);
   });
 
+
   return (
+    <motion.div
+      initial='initial'
+      animate='in'
+      exit='out'
+      variants={props.pageVariants}
+      transition={props.pageTransition}
+    >
     <Container>
       <BackgroundImgContainer img={props.img} />
       <VideoBtn>
@@ -141,6 +157,7 @@ const PageFactory = (props) => {
         <LastDivParagraph>{props.lastParagraph}</LastDivParagraph>
       </LastDiv>
     </Container>
+  </motion.div>
   );
 };
 
