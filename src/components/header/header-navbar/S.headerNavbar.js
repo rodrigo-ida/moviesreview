@@ -17,8 +17,11 @@ left: 100vw;
 background-color: black;
 height: calc\(100vh - ${props => props.headerHeight}px\);
 width: 100vw;
-/* animation: ${props => props.clicked ? showItSelf : hideItSelf} .3s forwards ease-in; */
+/* animation: ${props => props.clicked ? showItSelf : hideItSelf} 2s forwards ease-in; */
 
+@media (min-width: 600px){
+    
+}
 `
 
 

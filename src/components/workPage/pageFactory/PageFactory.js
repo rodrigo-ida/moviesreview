@@ -102,6 +102,7 @@ const DescriptionContainer = styled.div`
   padding: 20px;
   line-height: 30px;
   text-align: justify;
+  background-color: white;
 `;
 
 const AllMoviesImgContainer = styled.div`

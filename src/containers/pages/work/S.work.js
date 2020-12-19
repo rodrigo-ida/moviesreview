@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledWork = styled.div`
 
-width: 100vw;
+width: 100%;
 height: auto;
 background-color: black;
 
