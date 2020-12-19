@@ -17,7 +17,7 @@ const Work = (props) => {
   const [cardClicked, setcardClicked] = useState(0);
 
   const pageVariants = {
-    initial: {x:'-100vw'},
+    initial: {x:'100vw'},
     in: {
        x:0
     },

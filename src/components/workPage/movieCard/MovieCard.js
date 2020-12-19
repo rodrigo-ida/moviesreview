@@ -9,19 +9,13 @@ import {
 
 
 const StyledMovieCard = (props) => {
-    // const [clicked, setclicked] = useState(false);
 
-    const clickHandler = () => {
-    // setclicked((prevState) => !prevState);
-    // props.setshowHeader(prevState => !prevState);
-    props.setcardClicked(props.movieCardIndex)
+    const clickHandler = () => props.setcardClicked(props.movieCardIndex)
 
-    };
     return (
         <StyledMovieCardContainer
             img={props.img}
             onClick={clickHandler}
-            // clicked={clicked}
         >
             <CardTextContainer>
                 <CardText>

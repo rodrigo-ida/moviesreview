@@ -1,27 +1,55 @@
-import React from "react";
+import React, {useState} from "react";
 
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 
 import StyledMovieCard from "../movieCard/MovieCard";
 import movieData from "../../../assets/moviesData/movieData";
 
 import { motion } from "framer-motion";
+import styled from 'styled-components'
 
+const StyledMovieList = styled.ul`
+list-style: none;
+
+@media (min-width: 600px){
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+
+  
+  
+
+}
+
+`
 
 
 const MovieList = (props) => {
     
-    const history =  useHistory()
-    
-    const onUpdate = (props, e) => {
-        if(props.x > 50){
-            history.push(`/work${e.url}`)
-        }
+    const [cardClickedId, setcardClickedId] = useState(false)
+
+    const pageVariantsOdd = {
+      initial: {x:'-100vw'},
+      in: {
+         x:0
+      },
+      out: {
+         x:'-100vw'
+      }
+    }
+    const pageVariantsEven = {
+      initial: {x:'100vw'},
+      in: {
+         x:0
+      },
+      out: {
+         x:'-100vw'
+      }
     }
 
   const movieListHelper = movieData.map((e, index) => (
-    <li key={e.title + index}>
+    <li key={e.title + index} style={{display: 'block'}}>
       <Link
         to={(props) => ({
           ...props,
@@ -29,12 +57,12 @@ const MovieList = (props) => {
         })}
       >
         <motion.div
-        drag='x'
-        dragConstraints={{
-          left: 0,
-          right: 0,
-        }}
-        onUpdate={(event)=> onUpdate(event, e)}
+        onClick={()=> setcardClickedId(index)}
+        initial='initial'
+        animate='in'
+        exit={cardClickedId === index ? {x: '100vw'} : 'out'}
+        variants={ index % 2 ? pageVariantsOdd : pageVariantsEven}
+        transition={props.pageTransition}
         >
 
         <StyledMovieCard
@@ -51,18 +79,11 @@ const MovieList = (props) => {
   ));
 
 
-console.log(motion);
-  return (
-    <motion.div
-      initial='initial'
-      animate='in'
-      exit='out'
-      variants={props.pageVariants}
-      transition={props.pageTransition}
-    >
-      <ul>{movieListHelper}</ul>
-    </motion.div>
-  );
+
+
+
+
+  return <StyledMovieList >{movieListHelper}</StyledMovieList>
 };
 
 export default MovieList;

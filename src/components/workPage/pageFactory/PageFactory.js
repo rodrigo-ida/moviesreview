@@ -11,6 +11,7 @@ const Container = styled.div`
   width: 100vw;
   position: relative;
   z-index: 5555;
+  background-color: black;
 `;
 
 const BackgroundImgFullScreen = keyframes`
@@ -36,7 +37,7 @@ const BackgroundImgContainer = styled.div`
 `;
 
 const btnAnimation = keyframes`
-0%{ left: -238px}
+0%{ left: -2380px}
 90%{left: 0px}
 100%{left: -15px;}
 `;
@@ -50,7 +51,7 @@ const VideoBtn = styled.button`
   position: absolute;
   z-index: 1;
   top: 50vh;
-  left: -250px;
+  left: -2500px;
   border: none;
   padding-left: 20px;
   padding: 10px 0 10px 20px;
