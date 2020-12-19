@@ -7,8 +7,14 @@ import {
     ArrowContainer,
 } from "./S.movieCard";
 
+import React, {useState} from 'react'
+
 
 const StyledMovieCard = (props) => {
+
+    const [isHover, setIsHover] = useState(false)
+
+
 
     const clickHandler = () => props.setcardClicked(props.movieCardIndex)
 
@@ -16,13 +22,15 @@ const StyledMovieCard = (props) => {
         <StyledMovieCardContainer
             img={props.img}
             onClick={clickHandler}
+            onMouseOver={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
         >
-            <CardTextContainer>
-                <CardText>
+            <CardTextContainer isHover={isHover}>
+                <CardText isHover={isHover}>
                     <Title>{props.title}</Title>
                     <Subtitle>{props.subtitle}</Subtitle>
                 </CardText>
-                <ArrowContainer>
+                <ArrowContainer isHover={isHover}>
                     <i className="fas fa-long-arrow-alt-right"></i>
                 </ArrowContainer>
             </CardTextContainer>

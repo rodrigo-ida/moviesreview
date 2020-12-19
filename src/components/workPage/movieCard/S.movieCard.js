@@ -26,10 +26,12 @@ const CardTextContainer = styled.div`
     display: flex;
 
     @media (min-width: 600px){
-        width: 50px;
-        height: 50px;
-        margin-top: 45%;
-        /* margin-right: 5  px; */
+        width: ${props => props.isHover ? '280px' : '50px'};
+        
+        height: ${props => props.isHover ? '80px' : '50px'};
+        margin-top: 45%; 
+        transition: width 300ms ease-in-out, height 300ms ease-in-out;
+        overflow: hidden
 
     }
     
@@ -41,7 +43,8 @@ const CardText = styled.div`
     height: fit-content;
 
     @media (min-width: 600px){
-        display: none
+        display: ${props => props.isHover ? 'block' : 'none'};
+
 
     }
 `;
@@ -65,8 +68,15 @@ color: goldenrod;
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 0 0 0 30px;
 font-size: 20px;
+margin-left: auto;
+padding: 10px 25px;
+
+@media (min-width: 600px){
+    padding: 10px
+}
+
+
 `
 
 export {StyledMovieCardContainer,
