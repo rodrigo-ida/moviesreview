@@ -10,6 +10,12 @@ justify-content: space-evenly;
 height: 30px;
 padding: 1px;
 
+@media (min-width: 600px){
+    display: none;
+}
+
+
+
 `
 
 const BurgerBtn = props => {

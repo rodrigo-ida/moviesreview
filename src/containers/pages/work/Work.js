@@ -13,7 +13,7 @@ import movieData from "../../../assets/moviesData/movieData";
 import "./Work.css";
 
 const Work = (props) => {
-    const location = useLocation()
+  const location = useLocation()
   const [cardClicked, setcardClicked] = useState(0);
 
   const pageVariants = {

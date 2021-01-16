@@ -6,12 +6,17 @@ const StyledMovieCardContainer = styled.div`
     width: 100%;
     height: 200px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     padding: 1px 0;
     font-family: 'Crimson Text', serif;
+    transition: background-size 2s ;
     
     @media (min-width: 600px){
         height: 400px;
+
+        &:hover {
+            background-size: 120%;
+        }
 
     }
 

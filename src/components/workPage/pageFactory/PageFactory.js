@@ -3,9 +3,6 @@ import styled, { keyframes } from "styled-components";
 
 import {  motion } from "framer-motion";
 
-
-
-
 const Container = styled.div`
   height: auto;
   width: 100vw;
@@ -30,8 +27,7 @@ const BackgroundImgContainer = styled.div`
   background-size: cover;
   background-position: center;
   padding: 1px 0;
-  /* position: relative;
-  top: 0px; */
+
 
   animation: ${BackgroundImgFullScreen} 1s 50ms forwards;
 `;

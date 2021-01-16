@@ -16,5 +16,9 @@ const StyledHeader = styled.header`
   padding: 10px;
   z-index: 100;
   animation: ${(props) => (props.showHeader ? "" : hideHeader)} 0.3s forwards;
+
+  @media (min-width: 600px){
+    justify-content:left;
+  }
 `;
 export default StyledHeader;
